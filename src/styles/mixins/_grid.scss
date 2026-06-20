@@ -1,0 +1,67 @@
+@use "sass:math";
+@use "sass:map";
+@use '../variables' as variables;
+@use './breakpoints';
+
+@mixin make-row($gutter: variables.$grid-gutter-width) {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+}
+
+@mixin make-col($size: false, $columns: $grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($size, $columns));
+
+  } @else {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+
+@mixin make-col-ready() {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+
+@mixin make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@mixin make-grid-columns(
+  $columns:  variables.$grid-columns,
+  $gutter:  variables.$grid-gutter-width,
+  $breakpoints:  variables.$breakpoints
+) {
+  @each $breakpoint in map.keys($breakpoints) {
+    // ✅ FIXED: namespaced function
+    $infix: breakpoints.breakpoint-infix($breakpoint, $breakpoints);
+     @include breakpoints.media-breakpoint-up($breakpoint, $breakpoints) {
+        .col#{$infix} {
+        flex: 1 0 0;
+      }
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .col#{$infix}-#{$i} {
+            @include make-col($i, $columns);
+          }
+        }
+      }
+
+
+
+
+    }
+    
+  }
+}

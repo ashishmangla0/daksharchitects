@@ -1,0 +1,37 @@
+@use "variables";
+@use "mixins/breakpoints";
+@use "mixins/container";
+
+.container,
+.container-fluid {
+  @include container.make-container();
+  position: relative;
+}
+
+@each $breakpoint, $container-max-width in variables.$container-max-widths {
+  .container-#{$breakpoint} {
+    @extend .container-fluid;
+  }
+
+  @include breakpoints.media-breakpoint-up($breakpoint) {
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    $extend-breakpoint: true;
+
+    @each $name, $width in variables.$breakpoints {
+      @if ($extend-breakpoint) {
+        .container#{breakpoints.breakpoint-infix($name, variables.$breakpoints)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+
+        @if ($breakpoint == $name) {
+          $extend-breakpoint: false;
+        }
+      }
+    }
+  }
+}
+
+// @each $breakpoint, $max-width in variables.$container-max-widths { // .container-#{$breakpoint} { // @extend .container-fluid; // } // @include breakpoints.media-breakpoint-up($breakpoint) { // .container-#{$breakpoint} { // max-width: $max-width; // } // } // }

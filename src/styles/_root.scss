@@ -1,0 +1,14 @@
+@use "variables";
+:root {
+  //   --gutter: 1.5rem;
+  //   --container-max-width: 1200px;
+
+
+  @each $name, $value in variables.$breakpoints {
+    --breakpoint-#{$name}: #{$value};
+  }
+
+  --body-line-height: #{variables.$body-line-height};
+  --font-size-base: #{variables.$font-size-base};
+  
+}

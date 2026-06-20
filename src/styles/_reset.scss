@@ -1,0 +1,14 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    line-height: var(--body-line-height);
+    font-family: var(--font-catamaran);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+}
+
+*{
+margin-top:0;
+}

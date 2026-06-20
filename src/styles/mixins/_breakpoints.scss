@@ -1,0 +1,31 @@
+@use "sass:map";
+@use '../variables';
+
+@function breakpoint-infix($name, $breakpoints: variables.$breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min == null {
+    @return "";
+  } @else {
+    @return "-#{$name}";
+  }
+}
+
+@function breakpoint-min($name, $breakpoints: variables.$breakpoints) {
+  $min: map.get($breakpoints, $name);
+  @if $min != 0 {
+    @return $min;
+  } @else {
+    @return null;
+  }
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: variables.$breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
