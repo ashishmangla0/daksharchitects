@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.scss";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const interSans = Inter({
   variable: "--font-inter",
-    weight: ['400', '600',  '800', '900'],
+    weight: ['300','400', '500', '600',  '800', '900'],
   subsets: ["latin"],
 });
 
