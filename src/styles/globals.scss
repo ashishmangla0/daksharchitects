@@ -8,13 +8,13 @@
 
 
 @font-face {
-  font-family: 'codeamantra';
-  src: url('/font/codeamantra.eot?94342880');
-  src: url('/font/codeamantra.eot?94342880#iefix') format('embedded-opentype'),
-       url('/font/codeamantra.woff2?94342880') format('woff2'),
-       url('/font/codeamantra.woff?94342880') format('woff'),
-       url('/font/codeamantra.ttf?94342880') format('truetype'),
-       url('/font/codeamantra.svg?94342880#codeamantra') format('svg');
+  font-family: 'daksh';
+  src: url('/font/daksh.eot');
+  src: url('/font/daksh.eot') format('embedded-opentype'),
+       url('/font/daksh.woff2') format('woff2'),
+       url('/font/daksh.woff') format('woff'),
+       url('/font/daksh.ttf') format('truetype'),
+       url('/font/daksh.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,7 @@
 }
 */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "codeamantra";
+  font-family: "daksh";
   font-style: normal;
   font-weight: normal;
   speak: never;
@@ -59,14 +59,10 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-phone:before { content: '\e800'; } /* '' */
-.icon-phone-call:before { content: '\e801'; } /* '' */
-.icon-external-link:before { content: '\e803'; } /* '' */
-.icon-facebook:before { content: '\e804'; } /* '' */
-.icon-instagram:before { content: '\e805'; } /* '' */
-.icon-linkedin:before { content: '\e806'; } /* '' */
-.icon-youtube:before { content: '\e807'; } /* '' */
-.icon-twitter:before { content: '\e808'; } /* '' */
+.icon-arrow-down:before { content: '\e800'; } /* '' */
+.icon-arrow-up:before { content: '\e801'; } /* '' */
+.icon-arrow-left:before { content: '\e802'; } /* '' */
+.icon-arrow-right:before { content: '\e803'; } /* '' */
 
 
 
@@ -85,6 +81,10 @@
 
 img{
   max-width: 100%;
+}
+
+.d-flex{
+  display: flex;
 }
 
 

@@ -1,3 +1,47 @@
-.button{
-    border-radius: 8px;
+.button {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  padding-right: 52px;
+  cursor: pointer;
+
+  &_icon {
+    position: absolute;
+    background: #000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    right: 8px;
+    transform: rotate(-45deg);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &_primary {
+    background-color: #ffffff;
+    color: #000;
+
+    &:hover {
+      background-color: #000;
+      color: #ffffff;
+
+      .button_icon {
+        transform: rotate(0deg);
+        background: #ffffff;
+        color:#000000
+      }
+    }
+  }
 }
