@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "../button";
 import styles from "./footer.module.scss";
+import SocialLinks from "../sociallinks";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -26,13 +27,8 @@ const Footer = () => {
             <p>
               we design spaces with presence grounded, intentional, and timeless.
             </p>
-            <ul>
-              <li>
-                <a>
-
-                </a>
-              </li>
-            </ul>
+            hello ashish
+            <SocialLinks/>
           </div>
           <div className="col-md-4">
             <ul>
