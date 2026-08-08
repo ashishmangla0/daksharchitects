@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <Image src="/footerbottom4.png" alt="footer-bg" width={1920} height={1080} className={styles.footer_bg} />
+      <Image src="/footerbottom.png" alt="footer-bg" width={1920} height={1080} className={styles.footer_bg} />
     </footer>
   );
 };
