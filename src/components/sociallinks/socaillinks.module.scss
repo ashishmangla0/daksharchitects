@@ -1,0 +1,20 @@
+.socialList{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialItem{
+    //display: in
+   
+&:not(:last-child){
+    margin-right: 0.5rem
+}
+}
+
+
+.socialLink{
+    display: inline-flex;
+    line-height: 1;
+}

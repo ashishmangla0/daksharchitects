@@ -1,0 +1,55 @@
+@use '../variables';
+@each $key, $value in variables.$spacers {
+  // All sides
+  .m-#{$key} {
+    margin: $value;
+  }
+  // // Top
+  // .mt-#{$key} {
+  //   margin-top: $value !important;
+  // }
+  // // Right
+  // .me-#{$key} {
+  //   margin-right: $value !important;
+  // }
+  // // Bottom
+  .mb-#{$key} {
+    margin-bottom: $value !important;
+  }
+  // // Left
+  // .ms-#{$key} {
+  //   margin-left: $value !important;
+  // }
+  // // Horizontal (left & right)
+  // .mx-#{$key} {
+  //   margin-left: $value !important;
+  //   margin-right: $value !important;
+  // }
+  // // Vertical (top & bottom)
+  // .my-#{$key} {
+  //   margin-top: $value !important;
+  //   margin-bottom: $value !important;
+  // }
+}
+
+
+
+@each $breakpoint, $min-width in variables.$breakpoints {
+  @media (min-width: $min-width) {
+    @each $key, $value in variables.$spacers {
+      .m-#{$breakpoint}-#{$key} { margin: $value !important; }
+      .mt-#{$breakpoint}-#{$key} { margin-top: $value !important; }
+      .mb-#{$breakpoint}-#{$key} { margin-bottom: $value !important; }
+      .ms-#{$breakpoint}-#{$key} { margin-left: $value !important; }
+      .me-#{$breakpoint}-#{$key} { margin-right: $value !important; }
+      .mx-#{$breakpoint}-#{$key} {
+        margin-left: $value !important;
+        margin-right: $value !important;
+      }
+      .my-#{$breakpoint}-#{$key} {
+        margin-top: $value !important;
+        margin-bottom: $value !important;
+      }
+    }
+  }
+}

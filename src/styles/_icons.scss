@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'daksh';
+  src: url('/font/daksh.eot');
+  src: url('/font/daksh.eot') format('embedded-opentype'),
+       url('/font/daksh.woff2') format('woff2'),
+       url('/font/daksh.woff') format('woff'),
+       url('/font/daksh.ttf') format('truetype'),
+       url('/font/daksh.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "daksh";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+   font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down:before { content: '\e800'; } /* '' */
+.icon-arrow-up:before { content: '\e801'; } /* '' */
+.icon-arrow-left:before { content: '\e802'; } /* '' */
+.icon-arrow-right:before { content: '\e803'; } /* '' */
+.icon-twitter:before { content: '\e804'; } /* '' */
+.icon-facebook:before { content: '\e805'; } /* '' */
+.icon-tiktok:before { content: '\e806'; } /* '' */
+.icon-linkedin:before { content: '\e807'; } /* '' */
+.icon-instagram:before { content: '\e808'; } /* '' */
