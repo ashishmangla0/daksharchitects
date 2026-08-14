@@ -1,16 +1,9 @@
 import Head from "next/head";
 import Script from "next/script";
 
-export default function Home() {
-  return (
-    <>
-      <Script
-        type="application/ld+json"
-        id="schema-local-business"
-        strategy="beforeInteractive"
-      >
-        {`
-   "@context": "https://schema.org",
+
+ const schemaData = {
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Daksh Architects",
     "image": "https://daksharchitects.com/logo.png",
@@ -32,8 +25,17 @@ export default function Home() {
       "Residential Design",
       "Commercial Architecture"
     ]
-  `}
-      </Script>
+  };
+
+export default function Home() {
+  return (
+    <>
+      <Script
+          id="schema-local-business"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          strategy="beforeInteractive"
+        />
 
       <div>index page</div>
     </>
