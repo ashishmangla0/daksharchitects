@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Head from "next/head";
-import Script from "next/script";
 
 const interSans = Inter({
   variable: "--font-inter",
