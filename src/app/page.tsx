@@ -1,10 +1,11 @@
-import Script from "next/script";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-     <Script id="show-banner" type="application/ld+json">
-  {`
+      <Head>
+        <script type="application/ld+json">
+          {`
     "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "[Company Name]",
@@ -19,13 +20,10 @@ export default function Home() {
   "telephone": "[Your Phone]",
   "url": "[Your Website]",
   "priceRange": "$$"
-    
   `}
-</Script>
-    <div>
-      index page
-    </div>
+        </script>
+      </Head>
+      <div>index page</div>
     </>
-    
   );
 }
