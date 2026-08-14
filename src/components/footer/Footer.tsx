@@ -44,18 +44,26 @@ const Footer = () => {
             />
           </div>
           <div className="col-md-4">
-            <ul>
-              <li>
-                <Link href={"/"}>Home</Link>
+            <ul className={styles.footer_toplinklist}>
+              <li className={styles.footer_toplinkitem}>
+                <Link href={"/"} className={styles.footer_toplink}>
+                  Home
+                </Link>
               </li>
-              <li>
-                <Link href={"/"}>Home</Link>
+              <li className={styles.footer_toplinkitem}>
+                <Link href={"/"} className={styles.footer_toplink}>
+                  Featured Projects <sup>30</sup>
+                </Link>
               </li>
-              <li>
-                <Link href={"/"}>Home</Link>
+              <li className={styles.footer_toplinkitem}>
+                <Link href={"/"} className={styles.footer_toplink}>
+                  What We Do
+                </Link>
               </li>
-              <li>
-                <Link href={"/"}>Home</Link>
+              <li className={styles.footer_toplinkitem}>
+                <Link href={"/"} className={styles.footer_toplink}>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
